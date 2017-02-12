@@ -26,4 +26,18 @@ platform :android do
     )
   end
 
+  lane :build_and_test_release do |options|
+    version=options[:version]
+    versionCode=sh('./calc-version-code.sh ' + version)
+
+    gradle(
+      task: 'clean assembleRelease testReleaseUnitTest',
+
+      properties: {
+        'versionCode' => versionCode,
+        'versionName' => version
+      }
+    )
+  end
+
 end

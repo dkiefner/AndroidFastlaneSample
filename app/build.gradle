@@ -10,8 +10,8 @@ android {
         minSdkVersion 19
         targetSdkVersion 25
 
-        versionCode 1
-        versionName "1.0"
+        versionCode project.property('versionCode') as Integer
+        versionName project.property('versionName')
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
