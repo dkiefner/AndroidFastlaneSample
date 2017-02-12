@@ -20,13 +20,24 @@ default_platform :android
 
 platform :android do
 
-  lane :build_and_test_debug do
+  lane :build_and_run_unit_tests_debug do
     gradle(
       task: 'clean assembleDebug testDebugUnitTest'
     )
   end
 
-  lane :build_and_test_release do |options|
+  lane :build_and_run_instrumentation_tests_debug do |options|
+    emulator=options[:emulator]
+    sh('./prepare-emulator.sh ' + emulator)
+
+    gradle(
+      task: 'clean assembleRelease connectedDebugAndroidTest'
+    )
+
+    sh('./kill-emulators.sh')
+  end
+
+  lane :build_and_run_unit_tests_release do |options|
     version=options[:version]
     versionCode=sh('./calc-version-code.sh ' + version)
 
