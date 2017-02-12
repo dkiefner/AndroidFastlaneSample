@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Fastlane Sample</string>
+
+    <string name="prompt_name">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="error_login_invalid">The username or password is not valid.</string>
+    <string name="hello">Hello</string>
+</resources>
