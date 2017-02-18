@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
 
 import butterknife.ButterKnife;
-import butterknife.OnTextChanged;
 import de.dkiefner.sample.fastlane.MainActivity;
 import de.dkiefner.sample.fastlane.R;
 import de.dkiefner.sample.fastlane.databinding.LoginActivityBinding;
@@ -36,20 +34,10 @@ public class LoginActivity extends AppCompatActivity {
 		super.onDestroy();
 	}
 
-	@OnTextChanged(R.id.username)
-	public void onUsernameChanged(Editable editable) {
-		viewModel.setUsername(editable.toString());
-	}
-
-	@OnTextChanged(R.id.password)
-	public void onPasswordChanged(Editable editable) {
-		viewModel.setPassword(editable.toString());
-	}
-
 	private void openMainActivity() {
 		Intent openMain = new Intent(this, MainActivity.class);
 
-		openMain.putExtra("username", viewModel.getUsername());
+		openMain.putExtra("username", viewModel.username.get());
 
 		startActivity(openMain);
 		finish();

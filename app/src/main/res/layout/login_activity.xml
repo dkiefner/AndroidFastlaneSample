@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/prompt_name"
             android:maxLines="1"
-            android:text="@{viewModel.username}"/>
+            android:text="@={viewModel.username}"/>
 
         <EditText
             android:id="@+id/password"
@@ -34,7 +34,7 @@
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:text="@{viewModel.password}"/>
+            android:text="@={viewModel.password}"/>
 
         <TextView
             android:id="@+id/login_error"

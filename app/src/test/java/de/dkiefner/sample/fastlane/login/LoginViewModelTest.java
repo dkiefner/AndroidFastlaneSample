@@ -28,8 +28,8 @@ public class LoginViewModelTest {
 	@Test
 	public void thatDoLoginThrowsNoError_whenUsernameAndPasswordAreCorrect() throws Exception {
 		// given
-		testee.setUsername("foo");
-		testee.setPassword("bar");
+		testee.username.set("foo");
+		testee.password.set("bar");
 
 		TestObserver testObserver = new TestObserver();
 
@@ -43,8 +43,8 @@ public class LoginViewModelTest {
 	@Test
 	public void thatDoLoginThrowsError_whenUsernameAndPasswordAreNotCorrect() throws Exception {
 		// given
-		testee.setUsername("wrong");
-		testee.setPassword("credentials");
+		testee.username.set("wrong");
+		testee.password.set("credentials");
 
 		TestObserver testObserver = new TestObserver();
 
@@ -58,8 +58,8 @@ public class LoginViewModelTest {
 	@Test
 	public void thatDoLoginThrowsError_whenUsernameAndPasswordAreEmpty() throws Exception {
 		// given
-		testee.setUsername("");
-		testee.setPassword("");
+		testee.username.set("");
+		testee.password.set("");
 
 		TestObserver testObserver = new TestObserver();
 
@@ -85,8 +85,8 @@ public class LoginViewModelTest {
 	@Test
 	public void thatDoLoginShowsNoError_whenUsernameAndPasswordAreCorrect() throws Exception {
 		// given
-		testee.setUsername("foo");
-		testee.setPassword("bar");
+		testee.username.set("foo");
+		testee.password.set("bar");
 
 		// when
 		testee.doLogin().subscribe(new TestObserver());
@@ -98,8 +98,8 @@ public class LoginViewModelTest {
 	@Test
 	public void thatDoLoginShowsError_whenUsernameAndPasswordAreNotCorrect() throws Exception {
 		// given
-		testee.setUsername("wrong");
-		testee.setPassword("credentials");
+		testee.username.set("wrong");
+		testee.password.set("credentials");
 
 		// when
 		testee.doLogin().subscribe(new TestObserver());
