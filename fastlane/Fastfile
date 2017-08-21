@@ -11,7 +11,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.14.2"
+fastlane_version "2.53.1"
 
 # skip creating README.md
 skip_docs
