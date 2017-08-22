@@ -6,6 +6,6 @@ dependencies:
     # - gem install fastlane
 
     # accept all licenses
-    - yes | sdkmanager --licenses
+    - sdkmanager --licenses
 test:
   - fastlane build_and_run_unit_tests_debug
