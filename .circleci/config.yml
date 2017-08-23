@@ -19,6 +19,9 @@ jobs:
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
+      - run:
+          name: Install fastlane
+          command: gem install fastlane --verbose
       - save_cache:
           paths:
             - ~/.gradle
