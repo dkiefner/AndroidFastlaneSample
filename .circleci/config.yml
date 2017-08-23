@@ -1,4 +1,4 @@
-version: 1
+version: 2
 jobs:
   build:
     working_directory: ~/code
@@ -10,8 +10,8 @@ jobs:
       - run:
           name: Print Machine Information
           command: echo ANDROID_HOME=$ANDROID_HOME
-      - checkout:
-        post:
+      - checkout
+      - run:
           name: Copy Android Licenses
           command: cp -r licenses/. $ANDROID_HOME/licenses
       - restore_cache:
